@@ -92,7 +92,11 @@
                 emailjs.sendForm(serviceID, templateID, this)
                     .then(() => {
                         btn.value = 'Send Email';
-                        alert('MUCHAS GRACIAS POR PARTICIPAR!');
+                        alert('MIRA AL FINAL DE LA PAGINA')
+                        var msj2 = '<center><div style="display: block;background-color: yellow;border: 5px ridge;text-align: center" id="mensajillo"><div style="font-size: 6vw;color: red;display: block;">MUCHAS GRACIAS POR PARTICIPAR!</div></div></center>'
+                        $('body').append(msj2)
+                        
+                        //alert('MUCHAS GRACIAS POR PARTICIPAR!');
                     }, (err) => {
                         btn.value = 'Send Email';
                         alert(JSON.stringify(err));

